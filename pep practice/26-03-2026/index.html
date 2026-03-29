@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>forms using 2 fields</title>
+    </head>
+    <body>
+        <!-- <center>
+            <h1>LOGIN</h1>
+        <form onsubmit="return formvalidate()">
+            USERNAME:<br>
+            <input type="text" id="userna"><br><br>
+            PASSWORD:<br>
+            <input type="pasword" id="password"><br><br>
+            <input type="submit"  value="submit">
+
+        </form>
+        <p class="error" style="color:red"></p>
+        </center> -->
+        <!-- <script>
+            function formvalidate(){
+            let error = document.querySelector(".error");
+            let uname="24cs00"
+            let pass="form_pass";
+            let userna=document.getElementById("userna").value;
+            let password=document.getElementById("password").value;
+            if(userna!==uname){
+                error.innerText = "Username doesnot match";
+                return false;
+            }
+            if(password!==pass){
+                error.innerText = "Username doesnot match";
+                return false;
+            }
+            error.style.color = "green";
+            error.innerText = "Login successful!";
+            return false;
+
+            }
+        </script> -->
+        <!-- <script>
+        function showTime(){ 
+            const time = new Date();
+            let h = time.getHours();
+            let m = time.getMinutes();
+            let s = time.getSeconds();
+            var session="AM";
+            if(h==0){
+                h=12;
+            }
+            if(h>12){
+                h=h-12;
+                session="PM";
+            }
+            m = m < 10 ? "0" + m : m;
+            s = s < 10 ? "0" + s : s;
+            let curtime= h+":"+m+":"+s+session;
+            console.log(curtime);
+
+            setTimeout(showTime,1000);
+        }
+        showTime();
+        </script> -->
+        <div id="box">
+            <p>Hover me</p>
+        </div>
+        <style>
+            .body{
+                margin:auto;
+                justify-content: center;
+                align-items: center;
+
+            }
+
+            .box{
+                display:flex
+                width:100px;
+                height:100px;
+                color:blue;
+            }
+        </style>
+
+<script>
+let box = document.getElementById("box");
+
+box.addEventListener("mouseenter", function() {
+    let pos = 0;
+
+    let shake = setInterval(() => {
+        pos = pos === 5 ? -5 : 5;
+        box.style.transform = "translateX(" + pos + "px)";
+    }, 50);
+
+    box.addEventListener("mouseleave", function() {
+        clearInterval(shake);
+        box.style.transform = "translateX(0)";
+    }, { once: true });
+});
+</script>
+    </body>
+</html>

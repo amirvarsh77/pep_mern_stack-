@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body><div id="div1"><h1 id="h11">HEADING1</h1><p id="p1">PARAGRAPH 1.</p></div><script>
+x=document.getElementById("div1");
+document.write(x.nodeType+"<br>");
+document.write(x.nodeName+"<br>");
+document.write(x.parentNode.nodeName+"<br/>");
+document.write(x.firstChild.nextSibling.nodeName+"<br>");
+document.write(x.lastChild.previousSibling.nodeName+"<br>");
+document.write(x.firstChild.nodeName+"<br>");
+document.write(x.lastChild.nodeName+"<br>");
+document.write(x.previousSibling+"<br>");
+document.write(x.nextSibling+"<br>");
+
+document.write(x.hasAttributes()+"<br>");
+
+document.write(x.hasChildNodes()+"<br>");
+
+
+
+var node=document.createElement("p");
+var textnode=document.createTextNode("PARAGRAPH 2");
+node.appendChild(textnode);
+
+x.appendChild(node);
+document.write(x.lastChild.nodeName+"<br>");
+
+var newItem=document.createElement("h2")
+var textnode=document.createTextNode("HEADING 2")
+newItem.appendChild(textnode)
+var p2=x.getElementsByTagName("p");
+
+x.insertBefore(newItem,p2[1]);
+var m=x.getElementsByTagName("p");
+document.write(m[1].previousSibling.innerHTML+"<br>");
+var y=x.getElementsByTagName("p");
+document.write(y[0].innerHTML);
+var newItem
+</script>
+</body>
+</html>
