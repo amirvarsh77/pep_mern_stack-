@@ -1,0 +1,236 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <style>
+        body{
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            background-color: aquamarine;
+
+        }
+    </style>
+<center>
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+    
+    Name: <br>
+    <input type="text" id="name"><br><br>
+
+    Email: <br>
+    <input type="text" id="email"><br><br>
+
+    Phone: <br>
+    <input type="text" id="phone"><br><br>
+
+    Password: <br>
+    <input type="password" id="password"><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+</center>
+
+<p id="error" style="color:red;"></p>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let password = document.getElementById("password").value;
+    let error = document.getElementById("error");
+
+   
+    let nameRegex = /^[A-Za-z ]{3,}$/;
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phoneRegex = /^[0-9]{10}$/;
+    let passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+
+    
+    if (!nameRegex.test(name)) {
+        error.innerText = "Enter valid name (min 3 letters)";
+        return false;
+    }
+
+    
+    if (!emailRegex.test(email)) {
+        error.innerText = "Enter valid email";
+        return false;
+    }
+
+   
+    if (!phoneRegex.test(phone)) {
+        error.innerText = "Enter 10 digit phone number";
+        return false;
+    }
+
+   
+    if (!passwordRegex.test(password)) {
+        error.innerText = "Password must have 8 chars, uppercase, lowercase, number";
+        return false;
+    }
+    
+
+    error.innerText = "Form submitted successfully!";
+    return true;
+}
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #7fffd4, #b2f7ef);
+        }
+
+        .container{
+            background-color: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        input:focus{
+            border-color: #20b2aa;
+            box-shadow: 0 0 5px rgba(32,178,170,0.4);
+        }
+
+        input[type="submit"]{
+            background-color: #20b2aa;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        input[type="submit"]:hover{
+            background-color: #168f89;
+        }
+
+        #error{
+            margin-top: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+
+        <form onsubmit="return validateForm()">
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password">
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <p id="error" style="color:red;"></p>
+    </div>
+
+<script>
+function validateForm() {
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let password = document.getElementById("password").value;
+    let error = document.getElementById("error");
+
+    let nameRegex = /^[A-Za-z ]{3,}$/;
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phoneRegex = /^[0-9]{10}$/;
+    let passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+
+    if (!nameRegex.test(name)) {
+        error.innerText = "Enter valid name (min 3 letters)";
+        error.style.color = "red";
+        return false;
+    }
+
+    if (!emailRegex.test(email)) {
+        error.innerText = "Enter valid email";
+        error.style.color = "red";
+        return false;
+    }
+
+    if (!phoneRegex.test(phone)) {
+        error.innerText = "Enter 10 digit phone number";
+        error.style.color = "red";
+        return false;
+    }
+
+    if (!passwordRegex.test(password)) {
+        error.innerText = "Password must have 8 chars, uppercase, lowercase, number";
+        error.style.color = "red";
+        return false;
+    }
+
+    error.innerText = "Form submitted successfully!";
+    error.style.color = "green";
+    return false;
+}
+</script>
+
+</body>
+</html>
+

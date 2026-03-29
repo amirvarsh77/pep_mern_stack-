@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ebd9d9;
+   
+}
+
+.traffic-signal{
+    background: #222;
+    border-radius: 20px;
+    width: 100px;
+    height: 260px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 5px #333;
+}
+
+.light {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #444; 
+    
+}
+
+
+.red {
+    background-color: #ff0000;
+
+}
+
+.yellow {
+    background-color: #ffff00;
+   
+}
+
+.green{
+    background-color: #00ff00;
+}
